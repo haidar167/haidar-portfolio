@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haidar Ali — Data Science & Web Development Portfolio</title>
+  <meta name="description" content="Haidar Ali is a BS IT student at University of Agriculture Peshawar specializing in Data Science, Machine Learning, and Web Development. Premium quality at student-friendly prices." />
+  <meta name="keywords" content="Haidar Ali, Data Science, Machine Learning, Web Development, Portfolio, Peshawar" />
+  <meta property="og:title" content="Haidar Ali — Data & Web Portfolio" />
+  <meta property="og:description" content="Transforming Data into Intelligence. Premium services at student-friendly prices." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursor-follower" aria-hidden="true"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="nav-logo-link">Haidar Ali</a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-outline magnetic-btn" id="hire-me-btn" data-magnetic>Hire Me</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#services" class="mobile-link">Services</a></li>
+        <li><a href="#work" class="mobile-link">Work</a></li>
+        <li><a href="#pricing" class="mobile-link">Pricing</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+        <li><a href="#contact" class="mobile-link mobile-hire">Hire Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="hero" class="hero-section">
+    <div class="hero-inner">
+      <p class="hero-tagline reveal-fade">Data Science &nbsp;•&nbsp; Machine Learning &nbsp;•&nbsp; Web Development</p>
+      <h1 class="hero-headline reveal-up">
+        Transforming Data<br />into <em>Intelligence</em>
+      </h1>
+      <p class="hero-subtitle reveal-fade-delay">
+        I'm a BS IT student at University of Agriculture Peshawar — bridging the gap between raw data and business strategy. I help startups and businesses scale with premium quality work at student-friendly prices.
+      </p>
+      <div class="hero-cta reveal-fade-delay2">
+        <a href="#contact" class="btn btn-solid magnetic-btn" id="start-project-btn" data-magnetic>Start Your Project</a>
+        <a href="#work" class="btn btn-ghost magnetic-btn" id="view-work-btn" data-magnetic>View Selected Work</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span class="scroll-line"></span>
+      <span class="scroll-text">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ==================== MARQUEE ==================== -->
+  <div class="marquee-wrapper" aria-label="Skills marquee" role="region">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span class="marquee-item">PYTHON</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">R</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">SQL</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">TABLEAU</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">POWER BI</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">MACHINE LEARNING</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">TENSORFLOW</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">SCIKIT-LEARN</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">JAVASCRIPT</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">REACT</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">NODE.JS</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">DJANGO</span>
+        <span class="marquee-dot">◆</span>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="marquee-content" aria-hidden="true">
+        <span class="marquee-item">PYTHON</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">R</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">SQL</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">TABLEAU</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">POWER BI</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">MACHINE LEARNING</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">TENSORFLOW</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">SCIKIT-LEARN</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">JAVASCRIPT</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">REACT</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">NODE.JS</span>
+        <span class="marquee-dot">◆</span>
+        <span class="marquee-item">DJANGO</span>
+        <span class="marquee-dot">◆</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about" class="about-section">
+    <div class="about-inner">
+      <!-- Left sticky -->
+      <div class="about-left scroll-reveal reveal-left">
+        <span class="section-label">001 — About</span>
+        <h2 class="section-heading">Turning Complex Problems into Simple Solutions</h2>
+        <div class="about-left-accent"></div>
+      </div>
+      <!-- Right scroll -->
+      <div class="about-right scroll-reveal reveal-right">
+        <p class="about-body">
+          I operate at the intersection of data and design — translating raw, chaotic information into clear business intelligence that actually moves the needle.
+        </p>
+        <p class="about-body">
+          Whether it's building predictive models that forecast market trends, crafting dashboards that reveal hidden patterns, or engineering web platforms that convert visitors into customers — I bring precision, craft, and an obsessive attention to detail to every project.
+        </p>
+        <p class="about-body">
+          As a BS Information Technology student at the University of Agriculture Peshawar, I combine academic rigor with real-world client work, delivering results that larger agencies charge ten times more to produce.
+        </p>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">20+</span>
+            <span class="stat-label">Projects Delivered</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Client Satisfaction</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY CHOOSE ME ==================== -->
+  <section id="why" class="why-section">
+    <div class="why-inner">
+      <div class="section-header scroll-reveal reveal-up-simple">
+        <span class="section-label">002 — Why Me</span>
+        <h2 class="section-heading centered">What Sets Me Apart</h2>
+      </div>
+      <div class="why-cards">
+        <div class="why-card scroll-reveal reveal-left" id="why-card-1">
+          <div class="why-card-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 2L2 9l14 7 14-7L16 2zM2 23l14 7 14-7M2 16l14 7 14-7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="why-card-title">Affordable Pricing</h3>
+          <p class="why-card-text">Student-era rates without compromising the quality of a seasoned professional. You get exceptional value for every dollar invested.</p>
+        </div>
+        <div class="why-card scroll-reveal reveal-up-simple" id="why-card-2">
+          <div class="why-card-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="#fff" stroke-width="1.5"/><path d="M16 8v8l5 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="why-card-title">Fast Delivery</h3>
+          <p class="why-card-text">Tight deadlines are a specialty. I structure projects with rigorous timelines so your launch date is never just a suggestion.</p>
+        </div>
+        <div class="why-card scroll-reveal reveal-right" id="why-card-3">
+          <div class="why-card-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 3l3.09 6.26L26 10.27l-5 4.87 1.18 6.88L16 18.77l-6.18 3.25L11 15.14 6 10.27l6.91-1.01L16 3z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="why-card-title">Premium Quality</h3>
+          <p class="why-card-text">Every deliverable is crafted to the highest standard — clean code, pixel-perfect design, and production-ready data pipelines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES ==================== -->
+  <section id="services" class="services-section">
+    <div class="services-inner">
+      <div class="section-header scroll-reveal reveal-up-simple">
+        <span class="section-label">003 — Services</span>
+        <h2 class="section-heading centered">What I Do</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-item scroll-reveal reveal-left" id="service-1">
+          <div class="service-number">01</div>
+          <div class="service-content">
+            <h3 class="service-title">Data Science &amp; Analytics</h3>
+            <p class="service-desc">Exploratory data analysis, statistical modeling, interactive dashboards, and business intelligence reporting using Python, R, Tableau, and Power BI.</p>
+            <span class="service-tags">Python · R · Tableau · Power BI · SQL</span>
+          </div>
+        </div>
+        <div class="service-item scroll-reveal reveal-right" id="service-2">
+          <div class="service-number">02</div>
+          <div class="service-content">
+            <h3 class="service-title">Machine Learning</h3>
+            <p class="service-desc">End-to-end ML pipelines — from data preprocessing and feature engineering to model training, evaluation, and deployment-ready APIs.</p>
+            <span class="service-tags">TensorFlow · Scikit-Learn · Keras · MLflow</span>
+          </div>
+        </div>
+        <div class="service-item scroll-reveal reveal-left" id="service-3">
+          <div class="service-number">03</div>
+          <div class="service-content">
+            <div class="service-title-row">
+              <h3 class="service-title">Web Development</h3>
+              <span class="low-price-tag">LOW PRICE!</span>
+            </div>
+            <p class="service-desc">Full-stack web applications built with React, Node.js, and Django. From landing pages that convert to complex SaaS platforms.</p>
+            <span class="service-tags">React · Node.js · Django · PostgreSQL</span>
+          </div>
+        </div>
+        <div class="service-item scroll-reveal reveal-right" id="service-4">
+          <div class="service-number">04</div>
+          <div class="service-content">
+            <h3 class="service-title">UI/UX Design</h3>
+            <p class="service-desc">Research-backed interface design with high-fidelity Figma prototypes. Elegant, conversion-focused experiences that users actually enjoy.</p>
+            <span class="service-tags">Figma · Framer · User Research · Prototyping</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WORK ==================== -->
+  <section id="work" class="work-section">
+    <div class="work-inner">
+      <div class="section-header scroll-reveal reveal-up-simple">
+        <span class="section-label">004 — Selected Work</span>
+        <h2 class="section-heading centered">Recent Projects</h2>
+      </div>
+      <div class="work-grid">
+
+        <div class="work-card scroll-reveal reveal-left" id="work-card-1" data-tilt>
+          <div class="work-card-img-wrap">
+            <div class="work-card-img" id="work-img-1" style="background: linear-gradient(135deg, #555 0%, #222 100%);"></div>
+            <div class="work-card-overlay">
+              <span class="work-card-view">View Project ↗</span>
+            </div>
+          </div>
+          <div class="work-card-meta">
+            <span class="work-card-category">Data Science</span>
+            <h3 class="work-card-title">Sales Dashboard</h3>
+            <p class="work-card-desc">Interactive Power BI dashboard revealing $2M+ in hidden revenue opportunities through advanced analytics.</p>
+          </div>
+        </div>
+
+        <div class="work-card scroll-reveal reveal-right" id="work-card-2" data-tilt>
+          <div class="work-card-img-wrap">
+            <div class="work-card-img" id="work-img-2" style="background: linear-gradient(135deg, #444 0%, #1a1a1a 100%);"></div>
+            <div class="work-card-overlay">
+              <span class="work-card-view">View Project ↗</span>
+            </div>
+          </div>
+          <div class="work-card-meta">
+            <span class="work-card-category">Machine Learning</span>
+            <h3 class="work-card-title">ML Predictor</h3>
+            <p class="work-card-desc">A customer churn prediction model achieving 94% accuracy, deployed as a production-ready REST API.</p>
+          </div>
+        </div>
+
+        <div class="work-card scroll-reveal reveal-left" id="work-card-3" data-tilt>
+          <div class="work-card-img-wrap">
+            <div class="work-card-img" id="work-img-3" style="background: linear-gradient(135deg, #666 0%, #333 100%);"></div>
+            <div class="work-card-overlay">
+              <span class="work-card-view">View Project ↗</span>
+            </div>
+          </div>
+          <div class="work-card-meta">
+            <span class="work-card-category">Web Development</span>
+            <h3 class="work-card-title">E-commerce Site</h3>
+            <p class="work-card-desc">A full-stack React + Django e-commerce platform handling 10,000+ SKUs with real-time inventory sync.</p>
+          </div>
+        </div>
+
+        <div class="work-card scroll-reveal reveal-right" id="work-card-4" data-tilt>
+          <div class="work-card-img-wrap">
+            <div class="work-card-img" id="work-img-4" style="background: linear-gradient(135deg, #4a4a4a 0%, #1c1c1c 100%);"></div>
+            <div class="work-card-overlay">
+              <span class="work-card-view">View Project ↗</span>
+            </div>
+          </div>
+          <div class="work-card-meta">
+            <span class="work-card-category">Analytics</span>
+            <h3 class="work-card-title">Marketing Analysis</h3>
+            <p class="work-card-desc">Multi-channel marketing attribution model that improved ROAS by 340% for a DTC brand.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRICING ==================== -->
+  <section id="pricing" class="pricing-section">
+    <div class="pricing-inner">
+      <div class="section-header scroll-reveal reveal-up-simple">
+        <span class="section-label">005 — Pricing</span>
+        <h2 class="section-heading centered">Simple, Transparent Pricing</h2>
+        <p class="section-subtext">All prices are starting rates. Final cost depends on project scope and complexity.</p>
+      </div>
+      <div class="pricing-cards">
+
+        <div class="pricing-card scroll-reveal reveal-left" id="pricing-basic">
+          <div class="pricing-card-header">
+            <span class="pricing-tier">Basic</span>
+            <div class="pricing-price">
+              <span class="price-from">From</span>
+              <span class="price-amount">$50</span>
+              <span class="price-plus">+</span>
+            </div>
+          </div>
+          <ul class="pricing-features" role="list">
+            <li>Single-page web app or dashboard</li>
+            <li>Basic data analysis report</li>
+            <li>Clean, documented code</li>
+            <li>2 revision rounds</li>
+            <li>5-day delivery</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline pricing-btn magnetic-btn" data-magnetic>Get Started</a>
+        </div>
+
+        <div class="pricing-card pricing-card--featured scroll-reveal reveal-up-simple" id="pricing-standard">
+          <div class="pricing-card-badge">MOST POPULAR</div>
+          <div class="pricing-card-header">
+            <span class="pricing-tier">Standard</span>
+            <div class="pricing-price">
+              <span class="price-from">From</span>
+              <span class="price-amount">$150</span>
+              <span class="price-plus">+</span>
+            </div>
+          </div>
+          <ul class="pricing-features" role="list">
+            <li>Multi-page web application</li>
+            <li>ML model + API deployment</li>
+            <li>Interactive dashboard (Tableau/Power BI)</li>
+            <li>5 revision rounds</li>
+            <li>10-day delivery</li>
+            <li>Post-delivery support (2 weeks)</li>
+          </ul>
+          <a href="#contact" class="btn btn-solid pricing-btn magnetic-btn" data-magnetic>Get Started</a>
+        </div>
+
+        <div class="pricing-card scroll-reveal reveal-right" id="pricing-premium">
+          <div class="pricing-card-header">
+            <span class="pricing-tier">Premium</span>
+            <div class="pricing-price">
+              <span class="price-from">From</span>
+              <span class="price-amount">$300</span>
+              <span class="price-plus">+</span>
+            </div>
+          </div>
+          <ul class="pricing-features" role="list">
+            <li>Full-stack SaaS / data platform</li>
+            <li>End-to-end ML pipeline</li>
+            <li>Custom UI/UX design system</li>
+            <li>Unlimited revisions</li>
+            <li>30-day delivery</li>
+            <li>1-month post-delivery support</li>
+            <li>Priority communication</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline pricing-btn magnetic-btn" data-magnetic>Get Started</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact" class="contact-section">
+    <div class="contact-inner">
+      <div class="contact-heading-wrap scroll-reveal reveal-up-simple">
+        <span class="section-label">006 — Contact</span>
+        <h2 class="contact-heading">Let's Build <em>Together.</em></h2>
+        <p class="contact-subtext">Have a project in mind? Tell me about it and I'll get back to you within 24 hours.</p>
+      </div>
+
+      <form
+        class="contact-form scroll-reveal reveal-up-simple"
+        id="contact-form"
+        action="https://formsubmit.co/haidar904455@gmail.com"
+        method="POST"
+      >
+        <!-- FormSubmit.co honeypot + config -->
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://haidarali.dev/thanks" />
+        <input type="hidden" name="_subject" value="New Portfolio Inquiry 🚀" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contact-name" class="form-label">Full Name</label>
+            <input type="text" id="contact-name" name="name" class="form-input" placeholder="John Doe" required autocomplete="name" />
+            <span class="form-line"></span>
+          </div>
+          <div class="form-group">
+            <label for="contact-email" class="form-label">Email Address</label>
+            <input type="email" id="contact-email" name="email" class="form-input" placeholder="john@example.com" required autocomplete="email" />
+            <span class="form-line"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-type" class="form-label">Project Type</label>
+          <div class="form-select-wrap">
+            <select id="contact-type" name="project_type" class="form-select" required>
+              <option value="" disabled selected>Select a service...</option>
+              <option value="Data Science">Data Science &amp; Analytics</option>
+              <option value="Machine Learning">Machine Learning</option>
+              <option value="Web Development">Web Development</option>
+              <option value="UI/UX Design">UI/UX Design</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="form-select-arrow" aria-hidden="true">↓</span>
+          </div>
+          <span class="form-line"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-message" class="form-label">Message</label>
+          <textarea id="contact-message" name="message" class="form-textarea" placeholder="Tell me about your project, timeline, and budget..." rows="5" required></textarea>
+          <span class="form-line"></span>
+        </div>
+
+        <button type="submit" class="btn btn-solid form-submit magnetic-btn" id="form-submit-btn" data-magnetic>
+          <span class="btn-text">Send Message</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <span class="footer-logo">Haidar Ali</span>
+        <div class="footer-socials">
+          <a href="mailto:haidar904455@gmail.com" class="footer-social-link" aria-label="Email">Email</a>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">GitHub</a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="footer-year"></span> Haidar Ali. All rights reserved.</p>
+        <p class="footer-tagline">MADE WITH PRECISION &mdash; UNIVERSITY OF AGRICULTURE PESHAWAR</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
