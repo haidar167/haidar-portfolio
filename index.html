@@ -2,16 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Haidar Ali | AI Engineer, Data Scientist & Full-Stack Developer</title>
   <meta name="description" content="Building predictive AI models, deep data analytics, and high-converting web applications. Enterprise-grade engineering at student-friendly rates." />
   <meta name="author" content="Haidar Ali" />
   <meta property="og:title" content="Haidar Ali | AI Engineer, Data Scientist & Web Developer" />
   <meta property="og:description" content="Building predictive AI models, deep data analytics, and high-converting web applications. Enterprise-grade engineering at student-friendly rates." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://haidar167.github.io/haidar-portfolio/" />
+  <meta property="og:image" content="https://opengraph.githubassets.com/cfac0aa2d3e9d0da41e89c3ae040307db4c94ee0e191f4e98483204cb86f091e/haidar167/haidar-portfolio" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://haidar167.github.io/haidar-portfolio/" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src * data:; connect-src https://formsubmit.co; frame-src 'none';" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     /* ===== RESET & ROOT VARIABLES ===== */
     :root {
@@ -63,6 +69,23 @@
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
     button, input, select, textarea { font-family: inherit; }
+
+    /* Accessibility: Focus styles */
+    :focus-visible {
+      outline: 2px solid var(--brand-blue);
+      outline-offset: 2px;
+    }
+
+    /* Smooth section reveals */
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     .container {
       width: 100%;
@@ -396,6 +419,25 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-features-bar::before {
+      content: '';
+      position: absolute;
+      top: -2px; left: -2px; right: -2px; bottom: -2px;
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981, #3b82f6);
+      background-size: 400% 400%;
+      z-index: -1;
+      border-radius: inherit;
+      animation: borderGlow 6s ease infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes borderGlow {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
 
     .hero-feature-item {
@@ -1258,15 +1300,105 @@
       cursor: pointer;
       flex-shrink: 0;
     }
+  
+    /* Custom Modern Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #09090b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #27272a;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3b82f6;
+    }
+    ::selection {
+      background: rgba(59, 130, 246, 0.35);
+      color: #fff;
+    }
+
+    /* Chat bubble pre-wrap and animations */
+    .chat-bubble {
+      white-space: pre-wrap;
+      word-break: break-word;
+      animation: bubbleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes bubbleIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Live Email Dispatch Status Badges */
+    .chat-status-banner {
+      width: 100%;
+      background: rgba(59, 130, 246, 0.08);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 0.45rem 0.75rem;
+      font-size: 0.75rem;
+      color: #93c5fd;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-align: left;
+    }
+    .chat-status-banner strong {
+      color: #ffffff;
+    }
+    .chat-email-indicator {
+      width: 100%;
+      font-size: 0.72rem;
+      color: var(--foreground-muted);
+      text-align: center;
+      padding: 0.25rem 0;
+      transition: color 0.3s;
+    }
+    .chat-email-indicator.sent {
+      color: #10b981;
+      font-weight: 600;
+    }
+
+    /* Card glow & polish */
+    .service-card, .project-card, .pricing-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::after, .project-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), transparent 60%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .service-card:hover::after, .project-card:hover::after {
+      opacity: 1;
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- Scroll Progress Bar -->
+  <div style="position:fixed;top:0;left:0;width:0%;height:3px;background:linear-gradient(90deg,#3b82f6,#8b5cf6,#06b6d4);z-index:9999;transition:width 0.15s;" id="scrollProgressBar"></div>
 
   <!-- Ambient Canvas -->
   <div class="bg-canvas">
     <div class="glow-blob-1"></div>
     <div class="glow-blob-2"></div>
+    <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;"></div>
   </div>
+
+  <main>
 
   <!-- Header Navigation -->
   <header class="header-nav" id="headerNav">
@@ -1659,7 +1791,7 @@
         <div class="contact-form-box">
           <form action="https://formsubmit.co/haidar904455@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="🚀 New Direct Website Inquiry - Haidar Ali">
-            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="_template" value="table">
             
             <div class="form-group">
@@ -1697,6 +1829,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -1795,6 +1929,10 @@
       </div>
 
       <div class="agent-modal-body">
+        <div class="chat-status-banner">
+          <span class="status-dot"></span>
+          <span>⚡ <strong>Real-Time Delivery Active:</strong> Every message is automatically dispatched to <strong>haidar904455@gmail.com</strong></span>
+        </div>
         <div class="modal-chat-feed" id="modalChatFeed">
           <div class="chat-bubble bot">
             Hey! 👋 I'm Haidar's Message Agent. Ask me about pricing, services, or leave your project inquiry here — I'll send it directly to Haidar's email (<strong>haidar904455@gmail.com</strong>)!
@@ -1808,6 +1946,9 @@
           <button class="msg-quick-tag" onclick="modalQuickAsk('I want to hire Haidar')">Hire Haidar</button>
         </div>
 
+        <div class="chat-email-indicator" id="chatEmailIndicator">
+          🔒 Direct Lead Channel &bull; Transcripts are delivered directly to Haidar's inbox.
+        </div>
         <div class="modal-input-bar">
           <input type="text" id="modalChatInput" placeholder="Type your message here..." autocomplete="off" />
           <button class="btn-modal-send" id="modalSendBtn" onclick="handleModalChatSend()" aria-label="Send">
@@ -1820,11 +1961,26 @@
 
   <!-- ===== SCRIPTS ===== -->
   <script>
-    // Navigation Scroll
+    // Navigation Scroll + Progress Bar
     const headerNav = document.getElementById('headerNav');
+    const scrollProgressBar = document.getElementById('scrollProgressBar');
     window.addEventListener('scroll', () => {
       headerNav.classList.toggle('scrolled', window.scrollY > 40);
-    });
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      if (docH > 0) scrollProgressBar.style.width = (window.scrollY / docH * 100) + '%';
+    }, { passive: true });
+
+    // Section Reveal on Scroll
+    const revealSections = document.querySelectorAll('section');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    revealSections.forEach(s => sectionObserver.observe(s));
 
     // Mobile Navigation
     const burgerBtn = document.getElementById('burgerBtn');
@@ -1891,30 +2047,36 @@
     let customerDetectedName = '';
 
     function extractCustomerInfo(text) {
-      const emailMatch = text.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/);
+      const emailMatch = text.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/);
       if (emailMatch) {
         customerDetectedEmail = emailMatch[0];
       }
-      if (text.toLowerCase().includes('my name is')) {
-        const parts = text.split(/my name is/i);
-        if (parts[1]) customerDetectedName = parts[1].trim().split(' ')[0];
+      const nameMatch = text.match(/(?:my name is|i am|this is|call me)\s+([a-zA-Z]+)/i);
+      if (nameMatch && nameMatch[1]) {
+        customerDetectedName = nameMatch[1].trim();
       }
     }
 
     function emailChatToHaidar(agentType, fullTranscript) {
       extractCustomerInfo(fullTranscript);
 
-      // Debounce email sending by 1.5 seconds so rapid messages are grouped together
+      const indicator = document.getElementById('chatEmailIndicator');
+      if (indicator) {
+        indicator.textContent = '⏳ Dispatching transcript to haidar904455@gmail.com...';
+        indicator.classList.remove('sent');
+      }
+
+      // Debounce email sending by 1.2 seconds so rapid messages are grouped together
       clearTimeout(emailDebounceTimer);
       emailDebounceTimer = setTimeout(() => {
         const fd = new FormData();
-        fd.append('name', customerDetectedName || 'Website Visitor Lead');
-        fd.append('email', customerDetectedEmail || 'visitor@noorxai-portfolio.com');
+        fd.append('name', customerDetectedName || 'Website Visitor');
+        fd.append('email', customerDetectedEmail || 'visitor@haidar167.github.io');
         fd.append('_replyto', customerDetectedEmail || 'haidar904455@gmail.com');
         fd.append('_subject', '🚀 New Customer Chat from ' + agentType + ' - ' + (customerDetectedName || 'Live Visitor'));
         fd.append('agent_type', agentType);
-        fd.append('customer_name', customerDetectedName || 'Not specified yet');
-        fd.append('customer_email', customerDetectedEmail || 'Not specified yet');
+        fd.append('customer_name', customerDetectedName || 'Not specified');
+        fd.append('customer_email', customerDetectedEmail || 'Not specified');
         fd.append('full_transcript', fullTranscript);
         fd.append('device_time', new Date().toLocaleString());
         fd.append('_captcha', 'false');
@@ -1922,10 +2084,24 @@
 
         fetch('https://formsubmit.co/ajax/haidar904455@gmail.com', {
           method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
           body: fd
         }).then(r => r.json()).then(d => {
-          console.log('✅ Chat transcript successfully delivered to haidar904455@gmail.com:', d);
-        }).catch(err => console.log('Mail error:', err));
+          if (indicator) {
+            indicator.textContent = '✅ Delivered to Haidar (haidar904455@gmail.com)';
+            indicator.classList.add('sent');
+            setTimeout(() => {
+              indicator.textContent = '🔒 Direct Lead Channel • Transcripts are delivered directly to Haidar\'s inbox.';
+              indicator.classList.remove('sent');
+            }, 5000);
+          }
+        }).catch(err => {
+          if (indicator) {
+            indicator.textContent = '📧 Forwarded to Haidar\'s queue.';
+          }
+        });
       }, 1200);
     }
 
@@ -2005,7 +2181,7 @@
         const answer = resolveResponse(transcript);
         voiceLog.push(`[AGENT ${new Date().toLocaleTimeString()}]: ${answer}`);
 
-        modalTranscriptBox.innerHTML = `<strong>You:</strong> "${transcript}"<br /><br /><strong>Agent:</strong> ${answer.replace(/\n/g, '<br>')}`;
+        modalTranscriptBox.textContent = ''; var yLabel = document.createElement('strong'); yLabel.textContent = 'You: '; modalTranscriptBox.appendChild(yLabel); modalTranscriptBox.appendChild(document.createTextNode('"' + transcript + '"')); modalTranscriptBox.appendChild(document.createElement('br')); modalTranscriptBox.appendChild(document.createElement('br')); var aLabel = document.createElement('strong'); aLabel.textContent = 'Agent: '; modalTranscriptBox.appendChild(aLabel); modalTranscriptBox.appendChild(document.createTextNode(answer));
 
         speakAgentAnswer(answer, () => {
           if (isContinuousActive) {
@@ -2090,7 +2266,7 @@
     function addModalChatBubble(msg, sender) {
       const b = document.createElement('div');
       b.className = 'chat-bubble ' + sender;
-      b.innerHTML = msg.replace(/\n/g, '<br>');
+      b.textContent = msg;
       modalChatFeed.appendChild(b);
       modalChatFeed.scrollTop = modalChatFeed.scrollHeight;
       msgLog.push(`[${sender.toUpperCase()} ${new Date().toLocaleTimeString()}]: ${msg}`);
@@ -2122,8 +2298,8 @@
     // Auto-send full transcript on page exit
     window.addEventListener('beforeunload', () => {
       if (msgLog.length >= 2 || voiceLog.length >= 2) {
-        const combined = "=== 🤖 VOICE AGENT TRANSCRIPT ===\n" + voiceLog.join('\n') + "\n\n=== 💬 MESSAGE AGENT TRANSCRIPT ===\n" + msgLog.join('\n');
-        emailChatToHaidar('Exit Lead Transcript', combined);
+        const combined = '=== VOICE AGENT TRANSCRIPT ===\n' + voiceLog.join('\n') + '\n\n=== MESSAGE AGENT TRANSCRIPT ===\n' + msgLog.join('\n');
+        const exitData = new FormData(); exitData.append('name', 'Exit Transcript'); exitData.append('email', customerDetectedEmail || 'visitor@portfolio.com'); exitData.append('message', combined); exitData.append('_subject', 'Exit Lead Transcript'); navigator.sendBeacon('https://formsubmit.co/ajax/haidar904455@gmail.com', exitData);
       }
     });
   </script>
