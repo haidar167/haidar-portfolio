@@ -1922,20 +1922,16 @@
           </div>
           <div class="modal-header-text">
             <h3>Message &amp; Lead Agent</h3>
-            <p><span class="status-dot"></span> Direct Email to Haidar</p>
+            <p><span class="status-dot"></span> Online &bull; Ready to help</p>
           </div>
         </div>
         <button class="modal-close-btn" onclick="closeMsgModal()" title="Close">&times;</button>
       </div>
 
       <div class="agent-modal-body">
-        <div class="chat-status-banner">
-          <span class="status-dot"></span>
-          <span>⚡ <strong>Real-Time Delivery Active:</strong> Every message is automatically dispatched to <strong>haidar904455@gmail.com</strong></span>
-        </div>
         <div class="modal-chat-feed" id="modalChatFeed">
           <div class="chat-bubble bot">
-            Hey! 👋 I'm Haidar's Message Agent. Ask me about pricing, services, or leave your project inquiry here — I'll send it directly to Haidar's email (<strong>haidar904455@gmail.com</strong>)!
+            Hey! 👋 I'm Haidar's AI Assistant. How can I help you today? Feel free to ask about web development, AI models, pricing packages, or discuss your upcoming project!
           </div>
         </div>
 
@@ -1946,9 +1942,6 @@
           <button class="msg-quick-tag" onclick="modalQuickAsk('I want to hire Haidar')">Hire Haidar</button>
         </div>
 
-        <div class="chat-email-indicator" id="chatEmailIndicator">
-          🔒 Direct Lead Channel &bull; Transcripts are delivered directly to Haidar's inbox.
-        </div>
         <div class="modal-input-bar">
           <input type="text" id="modalChatInput" placeholder="Type your message here..." autocomplete="off" />
           <button class="btn-modal-send" id="modalSendBtn" onclick="handleModalChatSend()" aria-label="Send">
@@ -2060,47 +2053,32 @@
     function emailChatToHaidar(agentType, fullTranscript) {
       extractCustomerInfo(fullTranscript);
 
-      const indicator = document.getElementById('chatEmailIndicator');
-      if (indicator) {
-        indicator.textContent = '⏳ Dispatching transcript to haidar904455@gmail.com...';
-        indicator.classList.remove('sent');
-      }
-
       // Debounce email sending by 1.2 seconds so rapid messages are grouped together
       clearTimeout(emailDebounceTimer);
       emailDebounceTimer = setTimeout(() => {
-        const fd = new FormData();
-        fd.append('name', customerDetectedName || 'Website Visitor');
-        fd.append('email', customerDetectedEmail || 'visitor@haidar167.github.io');
-        fd.append('_replyto', customerDetectedEmail || 'haidar904455@gmail.com');
-        fd.append('_subject', '🚀 New Customer Chat from ' + agentType + ' - ' + (customerDetectedName || 'Live Visitor'));
-        fd.append('agent_type', agentType);
-        fd.append('customer_name', customerDetectedName || 'Not specified');
-        fd.append('customer_email', customerDetectedEmail || 'Not specified');
-        fd.append('full_transcript', fullTranscript);
-        fd.append('device_time', new Date().toLocaleString());
-        fd.append('_captcha', 'false');
-        fd.append('_template', 'table');
+        const payload = {
+          name: customerDetectedName || 'Website Visitor Lead',
+          email: customerDetectedEmail || 'visitor@haidar167.github.io',
+          _replyto: customerDetectedEmail || 'haidar904455@gmail.com',
+          _subject: '🚀 New Customer Chat (' + agentType + ') - ' + (customerDetectedName || 'Live Visitor'),
+          agent_type: agentType,
+          customer_name: customerDetectedName || 'Not specified',
+          customer_email: customerDetectedEmail || 'Not specified',
+          full_transcript: fullTranscript,
+          device_time: new Date().toLocaleString(),
+          _captcha: 'false',
+          _template: 'table'
+        };
 
         fetch('https://formsubmit.co/ajax/haidar904455@gmail.com', {
           method: 'POST',
           headers: {
+            'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
-          body: fd
-        }).then(r => r.json()).then(d => {
-          if (indicator) {
-            indicator.textContent = '✅ Delivered to Haidar (haidar904455@gmail.com)';
-            indicator.classList.add('sent');
-            setTimeout(() => {
-              indicator.textContent = '🔒 Direct Lead Channel • Transcripts are delivered directly to Haidar\'s inbox.';
-              indicator.classList.remove('sent');
-            }, 5000);
-          }
-        }).catch(err => {
-          if (indicator) {
-            indicator.textContent = '📧 Forwarded to Haidar\'s queue.';
-          }
+          body: JSON.stringify(payload)
+        }).catch(function() {
+          /* completely silent background error handling */
         });
       }, 1200);
     }
