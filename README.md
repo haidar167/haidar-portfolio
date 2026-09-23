@@ -6,6 +6,7 @@
 
 [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-3b82f6?style=for-the-badge)](https://haidar167.github.io/haidar-portfolio/)
 [![GitHub](https://img.shields.io/badge/GitHub-haidar167-181717?style=for-the-badge&logo=github)](https://github.com/haidar167)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0008--3278--5582-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0008-3278-5582)
 
 *Building predictive AI models, deep data analytics, and high-converting web applications.*
 
@@ -98,6 +99,7 @@ npx serve .
 <div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-@haidar167-181717?style=for-the-badge&logo=github)](https://github.com/haidar167)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0008--3278--5582-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0008-3278-5582)
 
 </div>
 
