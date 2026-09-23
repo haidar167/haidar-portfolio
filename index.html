@@ -14,7 +14,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://haidar167.github.io/haidar-portfolio/" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://orcid.org https://avatars.githubusercontent.com https://*.githubassets.com https://opengraph.githubassets.com https://github.com; connect-src 'self' https://formsubmit.co; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://orcid.org https://avatars.githubusercontent.com https://*.githubassets.com https://opengraph.githubassets.com https://github.com; connect-src 'self' https://api.web3forms.com https://formsubmit.co; frame-src 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests;" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -2147,12 +2147,11 @@
         </div>
 
         <div class="contact-form-box">
-          <form action="https://formsubmit.co/haidar904455@gmail.com" method="POST">
-            <!-- Anti-spam Honeypot -->
-            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
-            <input type="hidden" name="_subject" value="🚀 New Direct Website Inquiry - Haidar Ali">
-            <input type="hidden" name="_captcha" value="true">
-            <input type="hidden" name="_template" value="table">
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="8e5d73a1-eb98-4bb3-88f4-b929518abf9b" />
+            <input type="hidden" name="subject" value="🚀 New Direct Website Inquiry - Haidar Ali" />
+            <input type="hidden" name="from_name" value="Haidar Portfolio Website" />
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none;" />
             
             <div class="form-group">
               <label for="name">Your Name</label>
@@ -2426,21 +2425,19 @@
       clearTimeout(emailDebounceTimer);
       emailDebounceTimer = setTimeout(() => {
         const payload = {
+          access_key: '8e5d73a1-eb98-4bb3-88f4-b929518abf9b',
           name: customerDetectedName || 'Website Visitor Lead',
           email: customerDetectedEmail || 'visitor@haidar167.github.io',
-          _replyto: customerDetectedEmail || 'haidar904455@gmail.com',
-          _subject: '🚀 New Customer Chat (' + agentType + ') - ' + (customerDetectedName || 'Live Visitor'),
+          from_name: 'AI Agent (' + agentType + ')',
+          subject: '🚀 New Customer Chat (' + agentType + ') - ' + (customerDetectedName || 'Live Visitor'),
           message: fullTranscript,
           agent_type: agentType,
           customer_name: customerDetectedName || 'Not specified',
           customer_email: customerDetectedEmail || 'Not specified',
-          full_transcript: fullTranscript,
-          device_time: new Date().toLocaleString(),
-          _captcha: 'false',
-          _template: 'table'
+          device_time: new Date().toLocaleString()
         };
 
-        fetch('https://formsubmit.co/ajax/haidar904455@gmail.com', {
+        fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -2657,12 +2654,13 @@
       if (msgLog.length >= 2 || voiceLog.length >= 2) {
         const combined = '=== VOICE AGENT TRANSCRIPT ===\n' + voiceLog.join('\n') + '\n\n=== MESSAGE AGENT TRANSCRIPT ===\n' + msgLog.join('\n');
         const exitData = new FormData();
+        exitData.append('access_key', '8e5d73a1-eb98-4bb3-88f4-b929518abf9b');
         exitData.append('name', customerDetectedName || 'Exit Transcript');
         exitData.append('email', customerDetectedEmail || 'visitor@haidar167.github.io');
+        exitData.append('from_name', 'Exit Transcript Agent');
+        exitData.append('subject', 'Exit Lead Transcript - Haidar Portfolio');
         exitData.append('message', combined);
-        exitData.append('_subject', 'Exit Lead Transcript - ' + (customerDetectedName || 'Visitor'));
-        exitData.append('_captcha', 'false');
-        navigator.sendBeacon('https://formsubmit.co/ajax/haidar904455@gmail.com', exitData);
+        navigator.sendBeacon('https://api.web3forms.com/submit', exitData);
       }
     });
   </script>
