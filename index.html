@@ -6,6 +6,8 @@
   <title>Haidar Ali | AI Engineer, Data Scientist & Full-Stack Developer</title>
   <meta name="description" content="Building predictive AI models, deep data analytics, and high-converting web applications. Enterprise-grade engineering at student-friendly rates." />
   <meta name="author" content="Haidar Ali" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#09090b" />
   <meta property="og:title" content="Haidar Ali | AI Engineer, Data Scientist & Web Developer" />
   <meta property="og:description" content="Building predictive AI models, deep data analytics, and high-converting web applications. Enterprise-grade engineering at student-friendly rates." />
   <meta property="og:type" content="website" />
@@ -1749,6 +1751,12 @@
 </head>
 <body>
 
+  <!-- Skip-to-content for keyboard / screen-reader users -->
+  <a href="#hero" class="skip-link" style="position:absolute;top:-100%;left:0;background:var(--brand-blue);color:#fff;padding:0.75rem 1.5rem;z-index:99999;font-size:0.9rem;font-weight:700;border-radius:0 0 var(--radius-sm) 0;transition:top 0.25s;" onfocus="this.style.top='0'" onblur="this.style.top='-100%'">Skip to main content</a>
+
+  <!-- If JavaScript is disabled, still reveal sections -->
+  <noscript><style>section{opacity:1!important;transform:none!important;}</style></noscript>
+
   <!-- Scroll Progress Bar -->
   <div style="position:fixed;top:0;left:0;width:0%;height:3px;background:linear-gradient(90deg,#3b82f6,#8b5cf6,#06b6d4);z-index:9999;transition:width 0.15s;" id="scrollProgressBar"></div>
 
@@ -1762,12 +1770,13 @@
   <main>
 
   <!-- Header Navigation -->
-  <header class="header-nav" id="headerNav">
+  <header class="header-nav" id="headerNav" role="banner">
     <div class="container nav-content">
-      <a href="#" class="nav-brand">
+      <a href="#" class="nav-brand" aria-label="Haidar Ali – Home">
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
         <span>Haidar Ali</span>
       </a>
+      <nav aria-label="Main navigation">
       <ul class="nav-menu">
         <li><a href="#services">Services</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
@@ -1775,6 +1784,7 @@
         <li><a href="#stack">Tech Stack</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      </nav>
       <div class="nav-actions">
         <button class="btn-nav-cta" onclick="openMsgModal()">Let's Work Together</button>
         <button class="mobile-burger" id="burgerBtn" aria-label="Toggle navigation">
@@ -1785,8 +1795,8 @@
   </header>
 
   <!-- Mobile Nav Overlay -->
-  <div class="mobile-nav-overlay" id="mobileNav">
-    <button class="mobile-close-btn" id="mobileCloseBtn">&times;</button>
+  <div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+    <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close navigation">&times;</button>
     <a href="#services" onclick="closeNav()">💼 Services</a>
     <a href="#portfolio" onclick="closeNav()">🚀 Portfolio</a>
     <a href="#pricing" onclick="closeNav()">💰 Pricing</a>
@@ -2192,7 +2202,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-flex">
       <div class="nav-brand">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
